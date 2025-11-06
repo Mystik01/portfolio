@@ -1,5 +1,6 @@
-import { IconName } from "@/resources/icons";
-import { zones } from "tzdata";
+import type { IconName } from "@/resources/icons";
+import type { zones } from "tzdata";
+import type React from "react";
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
@@ -30,46 +31,35 @@ export type Person = {
 };
 
 /**
- * Newsletter Section
- * @description The below information will be displayed on the Home page in Newsletter block
- */
-export type Newsletter = {
-  /** Whether to display the newsletter section */
-  display: boolean;
-  /** Title of the newsletter   */
-  title: React.ReactNode;
-  /** Description of the newsletter */
-  description: React.ReactNode;
-};
-
-/**
  * Social link configuration.
  */
 export type Social = Array<{
-  /** Name of the social platform */
   name: string;
-  /** Icon for the social platform
-   * The icons are a part of "src/resources/icons.ts" file.
-   * If you need a different icon, import it there and reference it everywhere else
-   */
   icon: IconName;
-  /**
-   * The link to the social platform
-   *
-   * The link is not validated by code, make sure it's correct
-   */
   link: string;
 }>;
+
+/**
+ * Popup notification configuration.
+ */
+export type Popup = {
+  /** Whether to display the popup */
+  display: boolean;
+  /** Title of the popup */
+  title: string;
+  /** Description text in the popup */
+  description: string;
+};
 
 /**
  * Base interface for page configuration with common properties.
  */
 export interface BasePageConfig {
-  /** Path to the page
+  /** Path to the page (optional - App Router handles routing via file structure)
    *
    * The path should be relative to the public directory
    */
-  path: `/${string}` | string;
+  path?: `/${string}` | string;
   /** Label for navigation or display */
   label: string;
   /** Title of the page */
@@ -80,26 +70,6 @@ export interface BasePageConfig {
   image?: `/images/${string}` | string;
 }
 
-/**
- * Home page configuration.
- */
-export interface Home extends BasePageConfig {
-  /** The image to be displayed in metadata
-   *
-   * The image needs to be put inside `/public/images/` directory
-   */
-  image: `/images/${string}` | string;
-  /** The headline of the home page */
-  headline: React.ReactNode;
-  /** Featured badge, which appears above the headline */
-  featured: {
-    display: boolean;
-    title: React.ReactNode;
-    href: string;
-  };
-  /** The sub text which appears below the headline */
-  subline: React.ReactNode;
-}
 
 /**
  * About page configuration.
@@ -118,13 +88,7 @@ export interface About extends BasePageConfig {
     /** Whether to display the avatar */
     display: boolean;
   };
-  /** Calendar section configuration */
-  calendar: {
-    /** Whether to display the calendar */
-    display: boolean;
-    /** Link to the calendar */
-    link: string;
-  };
+
   /** Introduction section */
   intro: {
     /** Whether to display the introduction */
@@ -140,6 +104,7 @@ export interface About extends BasePageConfig {
     display: boolean;
     /** Title for the work experience section */
     title: string;
+    description?: React.ReactNode;
     /** List of work experiences */
     experiences: Array<{
       /** Company name */
@@ -149,7 +114,7 @@ export interface About extends BasePageConfig {
       /** Role or job title */
       role: string;
       /** Achievements at the company */
-      achievements: React.ReactNode[];
+      description: React.ReactNode;
       /** Images related to the experience */
       images?: Array<{
         /** Image source path */
@@ -175,6 +140,7 @@ export interface About extends BasePageConfig {
       name: string;
       /** Description of studies */
       description: React.ReactNode;
+      timeframe?: string;
     }>;
   };
   /** Technical skills section */
@@ -183,10 +149,11 @@ export interface About extends BasePageConfig {
     display: boolean;
     /** Title for the technical skills section */
     title: string;
+    description?: React.ReactNode;
     /** List of technical skills */
     skills: Array<{
       /** Skill title */
-      title: string;
+      
       /** Skill description */
       description?: React.ReactNode;
       /** Skill tags */
@@ -234,5 +201,39 @@ export interface Gallery extends BasePageConfig {
     alt: string;
     /** Image orientation (horizontal/vertical) */
     orientation: string;
+  }>;
+}
+
+/**
+ * Image used by sections
+ */
+export type SectionImage = {
+  src: string;
+  alt?: string;
+  width: number;
+  height: number;
+};
+
+/**
+ * Generic configuration for a page section that drives the navbar and page
+ * rendering. Add a section object (id/label/type) and the app will render a
+ * navbar item and a page heading automatically.
+ */
+export interface SectionConfig {
+  id: string;
+  label: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  /** Icon name as defined in `src/resources/icons.ts` */
+  icon?: IconName | string;
+  type?: "intro" | "technical" | "studies" | "work" | "projects" | string;
+  display?: boolean;
+  items?: string[];
+  images?: SectionImage[];
+  /** Optional list of external project links (e.g., GitHub repos) */
+  links?: Array<{
+    url: string;
+    title: string;
+    description?: string;
   }>;
 }

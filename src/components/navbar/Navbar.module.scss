@@ -1,0 +1,78 @@
+@use "../breakpoints.scss" as breakpoints;
+
+.mask {
+    pointer-events: none;
+    backdrop-filter: blur(0.5rem);
+    background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
+    mask-image: linear-gradient(rgba(0,0,0) 25%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%;
+}
+
+/* Remove link styling from navbar buttons */
+.position {
+    a {
+        text-decoration: none;
+        color: inherit;
+        
+        &:hover {
+            text-decoration: none;
+        }
+        
+        &:visited {
+            color: inherit;
+        }
+    }
+}
+
+/* Link wrapper for ToggleButton to remove default anchor appearance */
+.navLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--static-space-2);
+    text-decoration: none;
+    color: inherit;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.navLink:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--focus-color, rgba(0,0,0,0.08));
+}
+
+.selected {
+    /* approximate ToggleButton selected visual */
+    background: var(--neutral-alpha-weak);
+    border-radius: 6px;
+}
+
+.label {
+    display: inline-block;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.srOnly {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+@media (max-width: breakpoints.$s) {
+    .position {
+        top: auto;
+        bottom: var(--static-space-24);
+    }
+
+    .mask {
+        transform: rotate(180deg);
+        bottom: 0;
+    }
+}

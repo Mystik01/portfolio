@@ -20,6 +20,7 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiBriefcaseDuotone,
 } from "react-icons/pi";
 
 import {
@@ -27,9 +28,13 @@ import {
   SiNextdotjs,
   SiFigma,
   SiSupabase,
+  SiSqlite,
+  SiTypescript,
+  SiMongodb,
+  SiCredly,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaPython, FaGitAlt, FaReact } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -39,6 +44,7 @@ export const iconLibrary: Record<string, IconType> = {
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,
   book: PiBookBookmarkDuotone,
+  briefcase: PiBriefcaseDuotone,
   openLink: HiOutlineLink,
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
@@ -63,6 +69,13 @@ export const iconLibrary: Record<string, IconType> = {
   whatsapp: FaWhatsapp,
   reddit: FaReddit,
   telegram: FaTelegram,
+  python: FaPython,
+  sql: SiSqlite,
+  typescript: SiTypescript,
+  mongodb: SiMongodb,
+  git: FaGitAlt,
+  react: FaReact,
+  credly: SiCredly,
 };
 
 export type IconLibrary = typeof iconLibrary;
