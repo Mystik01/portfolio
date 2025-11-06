@@ -10,7 +10,7 @@ const person: Person = {
   name: "Logan Waller",
   role: "Technology Student",
   avatar: "/images/profile.jpeg",
-  email: "logan@logan.dev",
+  email: "logan@loganwaller.dev",
   location: "Europe/London",
   languages: [],
 };
@@ -158,14 +158,19 @@ const sections: SectionConfig[] = [
     display: true,
     links: [
       {
-        url: "https://github.com/your-username/your-repo",
-        title: "Sample Project",
-        description: "Short description of what this repository does.",
+        url: "https://github.com/Mystik01/magic-portfolio",
+        title: "This portfolio website",
+        description: "A fork of Magic portfolio template, heavily modified though using Once UI. TThis is my first React project.",
       },
       {
-        url: "https://github.com/your-username/another-repo",
-        title: "Another Project",
-        description: "Another example repository with a neat feature.",
+        url: "https://github.com/Mystik01/FlappyBird",
+        title: "Flappy Bird Clone",
+        description: "My version of Flappy Bird whilst I was leaning Javascript, html and css.",
+      },
+      {
+        url: "https://github.com/divyanshu-in/soundsharp-musicplayer-tkinter",
+        title: "Music Player built with Tkinter",
+        description: "A music player application built with Python's Tkinter library.",
       },
     ],
   },
