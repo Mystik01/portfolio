@@ -160,7 +160,7 @@ const sections: SectionConfig[] = [
       {
         url: "https://github.com/Mystik01/magic-portfolio",
         title: "This portfolio website",
-        description: "A fork of Magic portfolio template, heavily modified though using Once UI. TThis is my first React project.",
+        description: "A fork of Magic portfolio template, heavily modified though using Once UI. This is my first React project.",
       },
       {
         url: "https://github.com/Mystik01/FlappyBird",
