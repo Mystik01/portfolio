@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
         </Row>
-        <Row fillWidth horizontal="center" s={{ paddingX: "2" }}>
+        <Row fillWidth horizontal="center" padding="4" s={{ paddingX: "2" }}>
           <Row 
             background="page" 
             border="neutral-alpha-weak" 
@@ -118,9 +118,9 @@ export const Navbar: React.FC = () => {
             padding="4" 
             horizontal="center" 
             zIndex={1} 
-            s={{ padding: "32", fillWidth: true, radius: "l", marginX: "0", maxWidth: "none" }}
+            s={{ paddingY: "20", paddingX: "4", fillWidth: true, radius: "l", marginX: "0", maxWidth: "none" }}
           >
-            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning s={{ gap: "40", fillWidth: true, horizontal: "space-around", paddingX: "2" }}>
+            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning s={{ gap: "24", fillWidth: true, horizontal: "space-around" }}>
               {routes["/"] && (
                 <>
                   <Row s={{ hide: true }}>

@@ -76,21 +76,17 @@
         bottom: 0;
     }
     
-    /* Make mobile navbar icons responsive and larger for accessibility */
-    .mobileNavIcon {
+    /* Make mobile navbar icons significantly larger for better accessibility */
+    .mobileNavIcon {        
         :global(button) {
-            min-width: 12vw !important;
-            min-height: 12vw !important;
-            max-width: 64px !important;
-            max-height: 64px !important;
-            padding: 3vw !important;
+            min-width: 60px !important;
+            min-height: 60px !important;
+            padding: 18px !important;
         }
         
         :global(svg) {
-            width: 6vw !important;
-            height: 6vw !important;
-            max-width: 36px !important;
-            max-height: 36px !important;
+            width: 28px !important;
+            height: 28px !important;
         }
     }
 }
