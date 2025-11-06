@@ -45,6 +45,7 @@ export default async function RootLayout({
         fonts.code.variable,
       )}
     >
+      <GoogleTagManager gtmId="G-41B2RMQBVY" />
       {/* ThemeInit runs client-side to initialize theme/data attributes */}
       <Providers>
         <ThemeInit />
@@ -103,7 +104,6 @@ export default async function RootLayout({
           <NavOnHomeOnly />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
             <Flex horizontal="center" fillWidth minHeight="0">
-              <GoogleTagManager gtmId="G-41B2RMQBVY" />
               {children}
               <Analytics />
               <SpeedInsights />
