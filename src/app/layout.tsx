@@ -4,6 +4,8 @@ import "@/resources/custom.css";
 
 import classNames from "classnames";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
+
 import {
   Background,
   Column,
