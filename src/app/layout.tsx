@@ -23,7 +23,7 @@ import {
 import type { opacity, SpacingToken } from "@once-ui-system/core";
 import { Footer, Providers, NavOnHomeOnly } from "@/components";
 import ThemeInit from "@/components/ThemeInit";
-import { baseURL, effects, fonts, style, dataStyle } from "@/resources";
+import { effects, fonts } from "@/resources";
 
 
 
