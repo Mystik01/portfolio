@@ -13,6 +13,7 @@ const person: Person = {
   email: "logan@loganwaller.dev",
   location: "Europe/London",
   languages: [],
+  github: "Mystik01"
 };
 
 

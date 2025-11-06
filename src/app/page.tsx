@@ -160,13 +160,13 @@ export default function About() {
                   return (
                     about.technical.display && (
                       <Column key={s.id} id={s.id} fillWidth marginBottom="40">
-                        <RevealFx translateY={8} paddingBottom="8">
-                          <Heading as="h2" variant="display-strong-s" marginBottom="m">
+                        <RevealFx translateY={4} paddingBottom="2">
+                          <Heading as="h2" variant="display-strong-s" marginBottom="xs">
                             {s.title}
                           </Heading>
                         </RevealFx>
                         {/* VERSION 4: Large Icon Cards - 4 per row with hover animation */}
-                        <div style={{ width: "100%", marginTop: "16px" }}>
+                        <div style={{ width: "100%", marginTop: "4px" }}>
                           <div style={{ 
                             display: "flex", 
                             flexDirection: "row",
@@ -241,12 +241,12 @@ export default function About() {
                   return (
                     about.studies.display && (
                       <Column key={s.id} id={s.id} fillWidth marginBottom="40">
-                        <RevealFx translateY={8} paddingBottom="8">
-                          <Heading as="h2" variant="display-strong-s" marginBottom="m">
+                        <RevealFx translateY={4} paddingBottom="2">
+                          <Heading as="h2" variant="display-strong-s" marginBottom="xs">
                             {s.title}
                           </Heading>
                         </RevealFx>
-                        <Column fillWidth gap="l">
+                        <Column fillWidth gap="s">
                           {about.studies.institutions.map((institution) => (
                             <Column key={institution.name} fillWidth gap="4">
                               <Text id={institution.name} variant="heading-strong-l">
@@ -270,9 +270,9 @@ export default function About() {
                   return (
                     about.work.display && (
                       <Column key={s.id} id={s.id} fillWidth marginBottom="40">
-                        <Column fillWidth marginBottom="m">
-                          <RevealFx translateY={8} paddingBottom="8">
-                            <Heading as="h2" variant="display-strong-s" marginBottom="s">
+                        <Column fillWidth marginBottom="xs">
+                          <RevealFx translateY={4} paddingBottom="2">
+                            <Heading as="h2" variant="display-strong-s" marginBottom="xs">
                               {s.title}
                             </Heading>
                           </RevealFx>
@@ -310,14 +310,14 @@ export default function About() {
                 case "projects":
                   return (
                     <Column key={s.id} id={s.id} fillWidth marginBottom="40">
-                      <RevealFx translateY={8} paddingBottom="8">
-                        <Heading as="h2" variant="display-strong-s" marginBottom="m">
+                      <RevealFx translateY={4} paddingBottom="2">
+                        <Heading as="h2" variant="display-strong-s" marginBottom="xs">
                           {s.title}
                         </Heading>
                       </RevealFx>
-                      <Column fillWidth gap="l">
+                      <Column fillWidth style={{ marginTop: "4px" }}>
                         {s.links && s.links.length > 0 ? (
-                          <Row fillWidth paddingTop="m" gap="12" wrap>
+                          <Row fillWidth gap="12" wrap>
                             {s.links.map((link) => (
                               <SmartLink
                                 key={link.url}
@@ -365,6 +365,17 @@ export default function About() {
                         ) : (
                           <Text variant="body-default-m" onBackground="neutral-weak">No projects to show yet.</Text>
                         )}
+                        <Row horizontal="center" paddingTop="m">
+                          <Button
+                            href={`https://github.com/${person.github}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="primary"
+                            prefixIcon="github"
+                            label="View All My Projects on GitHub"
+                            size="l"
+                          />
+                        </Row>
                       </Column>
                     </Column>
                   );

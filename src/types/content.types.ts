@@ -28,6 +28,8 @@ export type Person = {
   location: IANATimeZone;
   /** Languages spoken */
   languages?: string[];
+  /** GitHub username */
+  github?: string;
 };
 
 /**
