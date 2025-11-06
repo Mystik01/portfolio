@@ -104,14 +104,23 @@ export const Navbar: React.FC = () => {
         padding="8"
         horizontal="center"
         data-border="rounded"
-        s={{ position: "fixed" }}
+        s={{ position: "fixed", padding: "4" }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
         </Row>
-        <Row fillWidth horizontal="center">
-          <Row background="page" border="neutral-alpha-weak" radius="m-4" shadow="l" padding="4" horizontal="center" zIndex={1}>
-            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
+        <Row fillWidth horizontal="center" s={{ paddingX: "2" }}>
+          <Row 
+            background="page" 
+            border="neutral-alpha-weak" 
+            radius="m-4" 
+            shadow="l" 
+            padding="4" 
+            horizontal="center" 
+            zIndex={1} 
+            s={{ padding: "32", fillWidth: true, radius: "l", marginX: "0", maxWidth: "none" }}
+          >
+            <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning s={{ gap: "40", fillWidth: true, horizontal: "space-around", paddingX: "2" }}>
               {routes["/"] && (
                 <>
                   <Row s={{ hide: true }}>
@@ -123,9 +132,11 @@ export const Navbar: React.FC = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <IconButton
+                      size="l"
                       icon="home"
                       aria-label="Top"
                       onClick={scrollToTop}
+                      className={styles.mobileNavIcon}
                     />
                   </Row>
                 </>
@@ -146,11 +157,12 @@ export const Navbar: React.FC = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
+                      size="l"
                       prefixIcon={s.icon}
                       selected={activeSection === s.id}
                       onClick={scrollToId(s.id)}
                       aria-label={s.label}
-                      className={styles.navLink}
+                      className={styles.mobileNavIcon}
                     />
                   </Row>
                 </React.Fragment>

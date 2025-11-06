@@ -75,4 +75,22 @@
         transform: rotate(180deg);
         bottom: 0;
     }
+    
+    /* Make mobile navbar icons responsive and larger for accessibility */
+    .mobileNavIcon {
+        :global(button) {
+            min-width: 12vw !important;
+            min-height: 12vw !important;
+            max-width: 64px !important;
+            max-height: 64px !important;
+            padding: 3vw !important;
+        }
+        
+        :global(svg) {
+            width: 6vw !important;
+            height: 6vw !important;
+            max-width: 36px !important;
+            max-height: 36px !important;
+        }
+    }
 }
