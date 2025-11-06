@@ -9,6 +9,10 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+
+//Google
+import { GoogleTagManager } from '@next/third-parties/google'
+
 import {
   Background,
   Column,
@@ -99,6 +103,7 @@ export default async function RootLayout({
           <NavOnHomeOnly />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
             <Flex horizontal="center" fillWidth minHeight="0">
+              <GoogleTagManager gtmId="G-41B2RMQBVY" />
               {children}
               <Analytics />
               <SpeedInsights />
