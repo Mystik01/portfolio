@@ -1,30 +1,31 @@
+// src/components/Tracker.jsx
+
 'use client'; 
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation'; // 👈 Import useRouter
 import { useEffect } from 'react';
-// 👈 The crucial import for firing tracking events
 import { track } from '@vercel/analytics/react'; 
 
 export default function Tracker() {
   const searchParams = useSearchParams();
+  const router = useRouter(); // 👈 Initialize useRouter
 
   useEffect(() => {
-    // 1. Get the parameters from the URL
-    const source = searchParams.get('utm_source');
-    const campaign = searchParams.get('utm_campaign');
+    const customId = searchParams.get('id');
 
-    // 2. Check for the specific CV tracking parameters
-    if (source === 'cv' && campaign) {
-      // 3. Fire the custom event
-      // This event will appear in the "Events" panel in your Vercel Analytics Dashboard
+    if (customId === '20x25') {
+      // 1. FIRE TRACKING EVENT (Happens first)
       track('CV_Link_Click', {
-        source: source,
-        campaign: campaign,
-        // Optional: Include the medium as well
-        medium: searchParams.get('utm_medium') || 'unknown',
+        source: 'CV_Application', 
+        campaign: 'work',
       });
-      console.log(`Vercel Tracking Event Fired: CV Click for campaign: ${campaign}`);
+      
+      // 2. REMOVE QUERY PARAMETERS (Happens immediately after)
+      // Replace the current URL with the clean root path ('/')
+      // The shallow option is not needed/supported in the App Router for this type of navigation,
+      // but router.replace('/') is the correct method.
+      router.replace('/'); 
     }
-  }, [searchParams]);
+  }, [searchParams, router]); 
 
-  return null; // This functional component renders nothing to the DOM
+  return null;
 }
