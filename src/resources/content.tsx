@@ -29,8 +29,8 @@ const social: Social = [
 // =============================================================================
 const popup: Popup = {
   display: true,
-  title: "Under Development",
-  description: "This portfolio is currently under development. Some features may not be fully functional yet (projects section) and there might be some bugs. Thanks for your patience!",
+  title: "Hello",
+  description: "Thanks for coming. This is my first React project. i'm pretty proud of it but there might be some bugs, there shouldn't be though.",
 };
 
 // =============================================================================
