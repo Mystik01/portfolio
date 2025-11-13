@@ -1,6 +1,7 @@
 import mdx from "@next/mdx";
 import { withBotId } from 'botid/next/config';
-import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants.js';
+
 const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {},
