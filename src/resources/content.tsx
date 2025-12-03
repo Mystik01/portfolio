@@ -173,6 +173,12 @@ const sections: SectionConfig[] = [
         title: "Music Player built with Tkinter",
         description: "A music player application built with Python's Tkinter library.",
       },
+      {
+        url: "https://github.com/Mystik01/toka-fitness",
+        title: 'Toka Fitness',
+        description: `A full-stack fitness tracking app built for a college project. Uses a Next.js frontend with
+a Flask API and Supabase authentication/database.`
+      }
     ],
   },
   {

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button, Column, Heading, Text } from "@once-ui-system/core";
 import styles from "./Popup.module.scss";
+import { track } from '@vercel/analytics';
 
 interface PopupProps {
   display: boolean;
@@ -27,6 +28,7 @@ export const Popup: React.FC<PopupProps> = ({ display, title, description }) => 
     setIsVisible(false);
     // Store dismissal in sessionStorage (cleared when browser closes)
     sessionStorage.setItem("popup-dismissed", "true");
+    track('Pop up closed', {}, { flags: ['cv-popup-closed'] });
   };
 
   if (!isVisible) return null;
