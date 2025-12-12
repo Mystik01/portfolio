@@ -57,8 +57,19 @@ const about: About = {
     work: {
     display: true,
     title: "Work Experience",
-    description: "I don't really have any actual work experience related to software engineering, but I work two part-time jobs.",
+    description: "My current and upcoming work experiences.",
     experiences: [
+      {
+      company: "Qualcomm",
+      timeframe: "May 2026 - July 2026 (Confirmed)",
+      role: "Industry Placement",
+      description: (
+        <>
+        I have secured a 9-week industry placement at <a href='https://www.qualcomm.com/' target='_blank' rel="noreferrer">Qualcomm</a>. I will collaborate with Mobile, Automotive, and IoT working groups, supporting 5G device testing and hardware validation. Working alongside software and hardware engineers, I'll benchmark solutions for efficiency and scalability while reviewing designs and code.
+        </>
+      ),
+      highlighted: true,
+      },
       {
       company: "Everyone Active",
       timeframe: "2023 - Present (Part-Time)",
@@ -182,6 +193,7 @@ a Flask API and Supabase authentication/database.`
     ],
   },
   {
+    
     id: "work",
     label: "Work",
     title: about.work.title,

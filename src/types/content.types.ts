@@ -117,6 +117,8 @@ export interface About extends BasePageConfig {
       role: string;
       /** Achievements at the company */
       description: React.ReactNode;
+      /** Whether to highlight this experience with special styling */
+      highlighted?: boolean;
       /** Images related to the experience */
       images?: Array<{
         /** Image source path */
@@ -228,7 +230,7 @@ export interface SectionConfig {
   description?: React.ReactNode;
   /** Icon name as defined in `src/resources/icons.ts` */
   icon?: IconName | string;
-  type?: "intro" | "technical" | "studies" | "work" | "projects" | string;
+  type?: "intro" | "technical" | "studies" | "work" | "projects" | "industry-placement" | string;
   display?: boolean;
   items?: string[];
   images?: SectionImage[];
@@ -238,4 +240,8 @@ export interface SectionConfig {
     title: string;
     description?: string;
   }>;
+  /** Optional work/industry placement fields */
+  company?: string;
+  role?: string;
+  timeframe?: string;
 }

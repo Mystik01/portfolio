@@ -283,25 +283,59 @@ export default function About() {
                           )}
                         </Column>
                         <Column fillWidth gap="l">
-                          {about.work.experiences.map((experience) => (
-                            <Column key={experience.company} fillWidth gap="4">
-                              <Row gap="8" wrap>
-                                <Text variant="heading-strong-l">
-                                  {experience.role}
+                          {about.work.experiences.map((experience: any) => (
+                            experience.highlighted ? (
+                              <Column
+                                key={experience.company}
+                                fillWidth
+                                gap="16"
+                                background="brand-alpha-weak"
+                                border="brand-alpha-medium"
+                                radius="l"
+                                padding="20"
+                              >
+                                <Column fillWidth gap="8">
+                                  <Row gap="8" wrap vertical="center">
+                                    <Icon name="checkmark" size="m" onBackground="brand-medium" />
+                                    <Heading as="h3" variant="heading-strong-l">
+                                      {experience.role}
+                                    </Heading>
+                                    <Text variant="heading-default-l" onBackground="neutral-weak">
+                                      @ {experience.company}
+                                    </Text>
+                                  </Row>
+                                  {experience.timeframe && (
+                                    <Text variant="body-default-s" onBackground="neutral-weak">
+                                      ✓ {experience.timeframe}
+                                    </Text>
+                                  )}
+                                </Column>
+                                {experience.description && (
+                                  <Text variant="body-default-m">
+                                    {experience.description}
+                                  </Text>
+                                )}
+                              </Column>
+                            ) : (
+                              <Column key={experience.company} fillWidth gap="4">
+                                <Row gap="8" wrap>
+                                  <Text variant="heading-strong-l">
+                                    {experience.role}
+                                  </Text>
+                                  <Text variant="heading-default-l" onBackground="neutral-weak">
+                                    @ {experience.company}
+                                  </Text>
+                                </Row>
+                                {experience.timeframe && (
+                                  <Text variant="body-default-s" onBackground="neutral-weak">
+                                    {experience.timeframe}
+                                  </Text>
+                                )}
+                                <Text variant="body-default-m" onBackground="neutral-weak">
+                                  {experience.description}
                                 </Text>
-                                <Text variant="heading-default-l" onBackground="neutral-weak">
-                                  @ {experience.company}
-                                </Text>
-                              </Row>
-                              {experience.timeframe && (
-                                <Text variant="body-default-s" onBackground="neutral-weak">
-                                  {experience.timeframe}
-                                </Text>
-                              )}
-                              <Text variant="body-default-m" onBackground="neutral-weak">
-                                {experience.description}
-                              </Text>
-                            </Column>
+                              </Column>
+                            )
                           ))}
                         </Column>
                       </Column>
